@@ -7,7 +7,7 @@ export class App extends Component {
     this.randomColor()
   }
   handleSlidingSlider = (event) => {
-    this.setState({ name: event.target.value })
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   randomNum(max) {
@@ -22,10 +22,11 @@ export class App extends Component {
   }
 
   render() {
-    const backgroundColor = `HSL  (${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%)`
+    const backgroundColor = `hsl(${this.state.hue},${this.state.saturation}%,${this.state.lightness}%)`
+    const newStyle = { backgroundColor: backgroundColor }
 
     return (
-      <main>
+      <main style={newStyle}>
         <div className="stripe-text">Color Picker</div>
 
         <section>
@@ -98,7 +99,7 @@ export class App extends Component {
         </section>
         <code>{backgroundColor}</code>
         <footer>
-          <button onClick={this.randomColor}> RANDOMIZER</button>
+          <button onClick={this.randomColor}> Pick A Random Color</button>
         </footer>
       </main>
     )
