@@ -4,35 +4,55 @@ export class App extends Component {
   render() {
     return (
       <main>
-        <h1
-        // style={{
-        //   backgroundColor: `hsl(${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%)`,
-        // }}
-        >
-          Color Picker
-        </h1>
-
-        <div>
+        <h1>Color Picker</h1>
+        {/* <div className="boxColor"> color</div> */}
+        <section>
           {/* create labels for each color slide */}
           <label>
             <h2>
-              Hue
+              <div className="rainbow-letters">
+                <span>H</span>
+                <span>U</span>
+                <span>E</span>
+              </div>
               <input name="hue" type="range" min="0" max="360" />
             </h2>
           </label>
           <label>
             <h2>
-              Saturation
+              <div className="lettersFade">
+                <span>S</span>
+                <span>A</span>
+                <span>T</span>
+                <span>U</span>
+                <span>R</span>
+                <span>A</span>
+                <span>T</span>
+                <span>I</span>
+                <span>O</span>
+                <span>N</span>
+              </div>
               <input name="saturation" type="range" min="0" max="100" />
             </h2>
           </label>
           <label>
             <h2>
-              Lightness
+              <div className="lettersBright">
+                <span>L</span>
+                <span>I</span>
+                <span>T</span>
+                <span>G</span>
+                <span>H</span>
+                <span>T</span>
+                <span>N</span>
+                <span>E</span>
+                <span>S</span>
+                <span>S</span>
+              </div>
               <input name="lightness" type="range" min="0" max="100" />
             </h2>
           </label>
-        </div>
+        </section>
       </main>
     )
   }
