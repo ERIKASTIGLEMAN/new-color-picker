@@ -1,7 +1,29 @@
 import React, { Component } from 'react'
 
 export class App extends Component {
+  state = { hue: 0, saturation: 0, lightness: 0 }
+
+  componentDidMount() {
+    this.randomColor()
+  }
+  handleSlidingSlider = (event) => {
+    this.setState({ name: event.target.value })
+  }
+
+  randomNum(max) {
+    return Math.floor(Math.random() * Math.floor(max))
+  }
+  randomColor = (event) => {
+    let hue = this.randomNum(360)
+    let saturation = this.randomNum(100)
+    let lightness = this.randomNum(100)
+
+    this.setState({ hue, saturation, lightness })
+  }
+
   render() {
+    const backgroundColor = `HSL  (${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%)`
+
     return (
       <main>
         <div className="stripe-text">Color Picker</div>
@@ -15,7 +37,14 @@ export class App extends Component {
                 <span>U</span>
                 <span>E</span>
               </div>
-              <input name="hue" type="range" min="0" max="360" />
+              <input
+                name="hue"
+                type="range"
+                min="0"
+                max="360"
+                onChange={this.handleSlidingSlider}
+                value={this.state.hue}
+              />
             </h2>
           </label>
           <label>
@@ -32,7 +61,14 @@ export class App extends Component {
                 <span>O</span>
                 <span>N</span>
               </div>
-              <input name="saturation" type="range" min="0" max="100" />
+              <input
+                name="saturation"
+                type="range"
+                min="0"
+                max="100"
+                onChange={this.handleSlidingSlider}
+                value={this.state.saturation}
+              />
             </h2>
           </label>
           <label>
@@ -49,10 +85,21 @@ export class App extends Component {
                 <span>S</span>
                 <span>S</span>
               </div>
-              <input name="lightness" type="range" min="0" max="100" />
+              <input
+                name="lightness"
+                type="range"
+                min="0"
+                max="100"
+                onChange={this.handleSlidingSlider}
+                value={this.state.lightness}
+              />
             </h2>
           </label>
         </section>
+        <code>{backgroundColor}</code>
+        <footer>
+          <button onClick={this.randomColor}> RANDOMIZER</button>
+        </footer>
       </main>
     )
   }
