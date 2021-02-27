@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 
 export class App extends Component {
-  Render() {
+  render() {
     return (
       <main>
-        <h1> Color Picker</h1>
+        <h1
+        // style={{
+        //   backgroundColor: `hsl(${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%)`,
+        // }}
+        >
+          Color Picker
+        </h1>
 
         <div>
           {/* create labels for each color slide */}
