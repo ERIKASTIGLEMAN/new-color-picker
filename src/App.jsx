@@ -1,5 +1,6 @@
-import React from 'react'
-
-export function App() {
-  return <div>Hello, World!</div>
+import React, { Component } from 'react'
+export class App extends Component {
+  Render() {
+    return <main></main>
+  }
 }
