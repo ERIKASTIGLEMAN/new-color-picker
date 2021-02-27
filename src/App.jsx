@@ -4,8 +4,8 @@ export class App extends Component {
   render() {
     return (
       <main>
-        <h1>Color Picker</h1>
-        {/* <div className="boxColor"> color</div> */}
+        <div className="stripe-text">Color Picker</div>
+
         <section>
           {/* create labels for each color slide */}
           <label>
